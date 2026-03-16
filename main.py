@@ -1,7 +1,13 @@
 import discord
 import asyncio
+import os
+from dotenv import load_dotenv
 from discord import app_commands
 from colorama import Fore, init
+
+# ================= LOAD ENV =================
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 # ================= COLORAMA SETUP =================
 init(autoreset=True)
@@ -168,4 +174,4 @@ async def on_member_remove(member):
             )
 
 # ================= RUN BOT =================
-bot.run("MTQ4MDkzMDI0NDAzNzk3MjEwMQ.GMqCOw.PuGM_OQOWACPk0LUs2ffl-rtZ2y88DwH7Hi5po")
+bot.run(TOKEN)
